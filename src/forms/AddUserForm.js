@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 
 const AddUserForm = (props) => {
-  const initialFormState = { id: null, name: '', username: '' }
+  const initialFormState = { id: null, name: '', username: '', spiritAnimal: '' }
 
   const [user, setUser] = useState(initialFormState)
 
@@ -22,6 +22,8 @@ const AddUserForm = (props) => {
       <input type="text" name="name" value={user.name} onChange={handleInputChange}></input>
       <label>Username</label>
       <input type="text" name="username" value={user.username} onChange={handleInputChange}></input>
+      <label>Spirit Animal</label>
+      <input type="text" name="spiritAnimal" value={user.spiritAnimal} onChange={handleInputChange}></input>
       <button>Add new user</button>
     </form>
   )
