@@ -36,6 +36,10 @@ const App = () => {
     setUsers(users.filter((user) => user.id !== id))
   }
 
+  const deleteUsers = () => {
+    setUsers([])
+  }
+
   return (
     <div className="container">
       <h1>CRUD App with Hooks</h1>
@@ -60,6 +64,11 @@ const App = () => {
         <div className="flex-large">
           <h2>View users</h2>
           <UserTable users={users} deleteUser={deleteUser} editRow={editRow}/>
+          <button
+            className="button muted-button"
+            onClick={deleteUsers}>
+            {'Delete All Users'}
+          </button>
         </div>
       </div>
     </div>
