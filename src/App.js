@@ -5,20 +5,20 @@ import EditUserForm from "./forms/EditUserForm"
 
 const App = () => {
   const usersData = [
-    { id: 1, name: 'Tania', username: 'floppydiskette', spiritAnimal: "bird" },
-    { id: 2, name: 'Craig', username: 'siliconeidolon', spiritAnimal: "dog" },
-    { id: 3, name: 'Ben', username: 'benisphere', spiritAnimal: "monkey" },
+    { id: 1, name: 'Tania', username: 'floppydiskette', spiritAnimal: "bird", favoriteFood: "pizza" },
+    { id: 2, name: 'Craig', username: 'siliconeidolon', spiritAnimal: "dog", favoriteFood: "sushi" },
+    { id: 3, name: 'Ben', username: 'benisphere', spiritAnimal: "monkey", favoriteFood: "avocado" },
   ]
 
   const [users, setUsers] = useState(usersData)
 
   const [editing, setEditing] = useState(false)
-  const initialFormState = { id: null, name: '', username: '', spiritAnimal: '' }
+  const initialFormState = { id: null, name: '', username: '', spiritAnimal: '', favoriteFood: '' }
   const [currentUser, setCurrentUser] = useState(initialFormState)
   const editRow = (user) => {
     setEditing(true)
 
-    setCurrentUser({ id: user.id, name: user.name, username: user.username, spiritAnimal: user.spiritAnimal })
+    setCurrentUser({ id: user.id, name: user.name, username: user.username, spiritAnimal: user.spiritAnimal, favoriteFood: user.favoriteFood })
   }
   const updateUser = (id, updatedUser) => {
     setEditing(false)
